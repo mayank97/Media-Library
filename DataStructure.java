@@ -12,17 +12,13 @@ import java.util.*;
 public class DataStructure 
 {
 	
-	public static void TreeSetSong(int k)
+	public static void TreeSetSong(int k) throws MyException
 	{
 		if(k>(Database.countSong)||k<=0)
 		{
 			//System.out.println("Enter a number between 1-31 as the number of songs in the library are 31");
-			try {
-				throw new MyException("(Exception)Enter a number between 1-31 as the number of songs in the library are 31");
-			} catch (MyException e) {
-				// TODO Auto-generated catch block
-				System.out.println(e.getMessage());
-			}
+			throw new MyException("(Exception)Enter a number between 1-31 as the number of songs in the library are 31");
+			
 		}
 		else{
 		
@@ -46,27 +42,8 @@ public class DataStructure
 		for(String s : tree)
 		{
 			String temp = s.substring(0,1);
-		
-			if((temp).equals("1"))
-			{
-				array[i] = s;
-			}
-			else if((temp).equals("2"))
-			{
-				array[i] = s;
-			}
-			else if((temp).equals("3"))
-			{
-				array[i] = s;
-			}
-			else if((temp).equals("4"))
-			{
-				array[i] = s;
-			}
-			else
-			{
-				array[i] = s;
-			}
+			
+			array[i] = s;
 			i--;
 		}
 		System.out.printf("Top %d song titles are : ", k);
